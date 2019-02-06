@@ -1,7 +1,7 @@
 /* glpk.h */
 
 /*************************************************************************
-*  This code is part of GLPK (GNU Linear Programming Kit). Test comment here.
+*  This code is part of GLPK (GNU Linear Programming Kit). Test comment 2.
 *
 *  Copyright (C) 2000-2018 Andrew Makhorin, Department for Applied
 *  Informatics, Moscow Aviation Institute, Moscow, Russia. All rights
