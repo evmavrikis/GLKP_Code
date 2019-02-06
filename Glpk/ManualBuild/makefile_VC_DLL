@@ -1,0 +1,238 @@
+## Build GLPK DLL with Microsoft Visual Studio Express ##
+
+CFLAGS = \
+/I. \
+/I..\src \
+/DHAVE_CONFIG_H=1 \
+/D_CRT_SECURE_NO_WARNINGS=1 \
+/nologo \
+/W3 \
+/O2 \
+/Zi
+
+OBJSET = \
+..\src\amd_1.obj \
+..\src\amd_2.obj \
+..\src\amd_aat.obj \
+..\src\amd_control.obj \
+..\src\amd_defaults.obj \
+..\src\amd_dump.obj \
+..\src\amd_info.obj \
+..\src\amd_order.obj \
+..\src\amd_post_tree.obj \
+..\src\amd_postorder.obj \
+..\src\amd_preprocess.obj \
+..\src\amd_valid.obj \
+..\src\advbas.obj \
+..\src\asnhall.obj \
+..\src\asnlp.obj \
+..\src\asnokalg.obj \
+..\src\ckasn.obj \
+..\src\ckcnf.obj \
+..\src\cplex.obj \
+..\src\cpp.obj \
+..\src\cpxbas.obj \
+..\src\graph.obj \
+..\src\gridgen.obj \
+..\src\intfeas1.obj \
+..\src\maxffalg.obj \
+..\src\maxflp.obj \
+..\src\mcflp.obj \
+..\src\mcfokalg.obj \
+..\src\mcfrelax.obj \
+..\src\minisat1.obj \
+..\src\mpl.obj \
+..\src\mps.obj \
+..\src\netgen.obj \
+..\src\npp.obj \
+..\src\pript.obj \
+..\src\prmip.obj \
+..\src\prob1.obj \
+..\src\prob2.obj \
+..\src\prob3.obj \
+..\src\prob4.obj \
+..\src\prob5.obj \
+..\src\prrngs.obj \
+..\src\prsol.obj \
+..\src\rdasn.obj \
+..\src\rdcc.obj \
+..\src\rdcnf.obj \
+..\src\rdipt.obj \
+..\src\rdmaxf.obj \
+..\src\rdmcf.obj \
+..\src\rdmip.obj \
+..\src\rdprob.obj \
+..\src\rdsol.obj \
+..\src\rmfgen.obj \
+..\src\strong.obj \
+..\src\topsort.obj \
+..\src\weak.obj \
+..\src\wcliqex.obj \
+..\src\wrasn.obj \
+..\src\wrcc.obj \
+..\src\wrcnf.obj \
+..\src\wript.obj \
+..\src\wrmaxf.obj \
+..\src\wrmcf.obj \
+..\src\wrmip.obj \
+..\src\wrprob.obj \
+..\src\wrsol.obj \
+..\src\btf.obj \
+..\src\btfint.obj \
+..\src\fhv.obj \
+..\src\fhvint.obj \
+..\src\ifu.obj \
+..\src\luf.obj \
+..\src\lufint.obj \
+..\src\scf.obj \
+..\src\scfint.obj \
+..\src\sgf.obj \
+..\src\sva.obj \
+..\src\colamd.obj \
+..\src\bfd.obj \
+..\src\bfx.obj \
+..\src\glpapi06.obj \
+..\src\glpapi07.obj \
+..\src\glpapi08.obj \
+..\src\glpapi09.obj \
+..\src\glpapi10.obj \
+..\src\glpapi12.obj \
+..\src\glpapi13.obj \
+..\src\glphbm.obj \
+..\src\glpios01.obj \
+..\src\glpios02.obj \
+..\src\glpios03.obj \
+..\src\glpios07.obj \
+..\src\glpios09.obj \
+..\src\glpios11.obj \
+..\src\glpios12.obj \
+..\src\glpipm.obj \
+..\src\glpmat.obj \
+..\src\glprgr.obj \
+..\src\glpscl.obj \
+..\src\glpspm.obj \
+..\src\glpssx01.obj \
+..\src\glpssx02.obj \
+..\src\lux.obj \
+..\src\alloc.obj \
+..\src\dlsup.obj \
+..\src\env.obj \
+..\src\error.obj \
+..\src\stdc.obj \
+..\src\stdout.obj \
+..\src\stream.obj \
+..\src\time.obj \
+..\src\tls.obj \
+..\src\cfg.obj \
+..\src\cfg1.obj \
+..\src\cfg2.obj \
+..\src\clqcut.obj \
+..\src\covgen.obj \
+..\src\fpump.obj \
+..\src\gmicut.obj \
+..\src\gmigen.obj \
+..\src\mirgen.obj \
+..\src\spv.obj \
+..\src\minisat.obj \
+..\src\avl.obj \
+..\src\bignum.obj \
+..\src\dimacs.obj \
+..\src\dmp.obj \
+..\src\ffalg.obj \
+..\src\fp2rat.obj \
+..\src\fvs.obj \
+..\src\gcd.obj \
+..\src\jd.obj \
+..\src\keller.obj \
+..\src\ks.obj \
+..\src\mc13d.obj \
+..\src\mc21a.obj \
+..\src\mt1.obj \
+..\src\mygmp.obj \
+..\src\okalg.obj \
+..\src\qmd.obj \
+..\src\relax4.obj \
+..\src\rng.obj \
+..\src\rng1.obj \
+..\src\round2n.obj \
+..\src\str2int.obj \
+..\src\str2num.obj \
+..\src\strspx.obj \
+..\src\strtrim.obj \
+..\src\triang.obj \
+..\src\wclique.obj \
+..\src\wclique1.obj \
+..\src\mpl1.obj \
+..\src\mpl2.obj \
+..\src\mpl3.obj \
+..\src\mpl4.obj \
+..\src\mpl5.obj \
+..\src\mpl6.obj \
+..\src\mplsql.obj \
+..\src\npp1.obj \
+..\src\npp2.obj \
+..\src\npp3.obj \
+..\src\npp4.obj \
+..\src\npp5.obj \
+..\src\npp6.obj \
+..\src\proxy.obj \
+..\src\proxy1.obj \
+..\src\spxat.obj \
+..\src\spxchuzc.obj \
+..\src\spxchuzr.obj \
+..\src\spxlp.obj \
+..\src\spxnt.obj \
+..\src\spxprim.obj \
+..\src\spxprob.obj \
+..\src\spychuzc.obj \
+..\src\spychuzr.obj \
+..\src\spydual.obj \
+..\src\adler32.obj \
+..\src\compress.obj \
+..\src\crc32.obj \
+..\src\deflate.obj \
+..\src\gzclose.obj \
+..\src\gzlib.obj \
+..\src\gzread.obj \
+..\src\gzwrite.obj \
+..\src\inffast.obj \
+..\src\inflate.obj \
+..\src\inftrees.obj \
+..\src\trees.obj \
+..\src\uncompr.obj \
+..\src\zio.obj \
+..\src\zutil.obj
+
+.c.obj:
+        cl.exe $(CFLAGS) /Fo$*.obj /c $*.c
+
+all: glpk_4_65.dll glpsol.exe
+
+glpk_4_65.dll: $(OBJSET)
+        cl.exe $(CFLAGS) /LD /Feglpk_4_65.dll \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                ..\src\*.obj \
+                glpk_4_65.def
+
+glpsol.exe: ..\examples\glpsol.obj glpk_4_65.dll
+        cl.exe $(CFLAGS) /Feglpsol.exe \
+                ..\examples\glpsol.obj glpk_4_65.lib
+
+check: glpsol.exe
+        .\glpsol.exe --version
+        .\glpsol.exe --mps ..\examples\murtagh.mps --max
+
+## eof ##
