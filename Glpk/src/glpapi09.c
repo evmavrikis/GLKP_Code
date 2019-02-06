@@ -658,6 +658,13 @@ void glp_set_iocp_tl(glp_iocp *param, int time_limit)
 	param->tm_lim = time_limit;
 }
 
+void glp_set_iocp_cuts(glp_iocp *param, int gmi_cuts, int mir_cuts, int cov_cuts, int clq_cuts)
+{
+	param->gmi_cuts = gmi_cuts;
+	param->mir_cuts = mir_cuts;
+	param->cov_cuts = cov_cuts;
+	param->clq_cuts = clq_cuts;
+}
 int glp_intopt_init_param(glp_prob *P)
 {     /* solve MIP problem with the branch-and-bound method */
 	glp_iocp _parm;

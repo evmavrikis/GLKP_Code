@@ -5,6 +5,7 @@ EXPORTS
 glp_create_prob
 glp_create_iocp
 glp_set_iocp_tl
+glp_set_iocp_cuts
 glp_intopt_ptr
 glp_set_prob_name
 glp_set_obj_name

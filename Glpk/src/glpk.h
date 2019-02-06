@@ -312,6 +312,8 @@ glp_iocp *glp_create_iocp(void);
 
 void glp_set_iocp_tl(glp_iocp *param, int time_limit);
 
+void glp_set_iocp_cuts(glp_iocp *param, int gmi_cuts, int mir_cuts, int cov_cuts, int clq_cuts);
+
 void glp_set_prob_name(glp_prob *P, const char *name);
 /* assign (change) problem name */
 
