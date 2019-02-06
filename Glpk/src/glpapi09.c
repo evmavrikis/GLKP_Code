@@ -649,7 +649,7 @@ glp_iocp *glp_create_iocp(void)
 {
 	glp_iocp *lp;
 	lp = xmalloc(sizeof(glp_iocp));
-	//create_prob(lp);
+	glp_init_iocp((glp_iocp *)lp);
 	return lp;
 }
 
